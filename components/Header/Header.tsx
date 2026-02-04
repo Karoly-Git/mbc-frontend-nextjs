@@ -1,18 +1,25 @@
 "use client";
 
-import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import "./Header.css";
+
+import { usePathname } from "next/navigation";
 import { TiShoppingCart as CartIcon } from "react-icons/ti";
 import { FaUser as UserIcon } from "react-icons/fa6";
 import { IoIosSearch as SearchIcon } from "react-icons/io";
 
 export default function Header() {
-    const inputRef = useRef<HTMLInputElement>(null);
+    const pathname = usePathname();
 
-    const handleSearchIconClick = () => {
-        inputRef.current?.focus();
+    const isActive = (href: string) => {
+        // exact match
+        if (pathname === href) return true;
+
+        // highlight /shop and all child routes like /shop/toys/...
+        if (href === "/shop" && pathname.startsWith("/shop")) return true;
+
+        return false;
     };
 
     return (
@@ -25,37 +32,41 @@ export default function Header() {
                             <Image
                                 src="/logo.png"
                                 alt="Made by Care"
-                                width={52}
-                                height={52}
+                                fill
                                 priority
+                                style={{ objectFit: "contain" }}
                             />
                         </div>
                     </Link>
 
                     <div className="searchBox">
-                        {/* ✅ click focus */}
-                        <button
-                            className="searchIconBtn"
-                            onClick={handleSearchIconClick}
-                            aria-label="Focus search"
-                            type="button"
-                        >
+                        <span className="searchIcon">
                             <SearchIcon />
-                        </button>
-
-                        <input ref={inputRef} type="text" placeholder="Search..." />
+                        </span>
+                        <input type="text" placeholder="Search..." />
                     </div>
                 </div>
 
                 {/* Center */}
                 <nav className="headerNav">
-                    <Link href="/shop" className="navItem active">
+                    <Link
+                        href="/shop"
+                        className={`navItem ${isActive("/shop") ? "active" : ""}`}
+                    >
                         Shop
                     </Link>
-                    <Link href="/about" className="navItem">
+
+                    <Link
+                        href="/about"
+                        className={`navItem ${isActive("/about") ? "active" : ""}`}
+                    >
                         About Us
                     </Link>
-                    <Link href="/contact" className="navItem">
+
+                    <Link
+                        href="/contact"
+                        className={`navItem ${isActive("/contact") ? "active" : ""}`}
+                    >
                         Reach us
                     </Link>
                 </nav>
