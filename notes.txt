@@ -1,0 +1,611 @@
+### Phase 1 (MVP)
+
+✅ product list
+✅ product details page
+✅ add to cart
+✅ checkout with Stripe
+
+### Phase 2
+
+✅ authentication (optional)
+✅ order history
+✅ admin dashboard (your own)
+✅ stock management
+
+### Phase 3
+
+✅ emails (order confirmation)
+✅ discounts / coupons
+✅ reviews, etc.
+
+---
+
+madebycare-webshop/
+├─ app/
+│  ├─ layout.tsx
+│  ├─ page.tsx
+│  ├─ globals.css
+│
+│  ├─ shop/
+│  │  ├─ page.tsx
+│  │  ├─ [productId]/
+│  │  │  └─ page.tsx
+│  │  └─ category/
+│  │     └─ [categorySlug]/
+│  │        └─ page.tsx
+│
+│  ├─ cart/
+│  │  └─ page.tsx
+│
+│  ├─ checkout/
+│  │  ├─ page.tsx
+│  │  ├─ success/
+│  │  │  └─ page.tsx
+│  │  └─ cancel/
+│  │     └─ page.tsx
+│
+│  ├─ account/
+│  │  ├─ page.tsx
+│  │  └─ orders/
+│  │     └─ page.tsx
+│
+│  ├─ admin/
+│  │  ├─ page.tsx
+│  │  └─ products/
+│  │     ├─ page.tsx
+│  │     └─ new/
+│  │        └─ page.tsx
+│
+│  └─ api/
+│     ├─ stripe/
+│     │  └─ webhook/
+│     │     └─ route.ts
+│     └─ health/
+│        └─ route.ts
+│
+├─ components/
+│  ├─ Header.tsx
+│  ├─ Footer.tsx
+│  ├─ ProductCard.tsx
+│  ├─ AddToCartButton.tsx
+│  └─ CartDrawer.tsx
+│
+└─ lib/
+   ├─ db.ts
+   └─ stripe.ts
+
+
+✅ Step 1: Create folders
+
+mkdir -p app/shop
+mkdir -p app/shop/[slug]
+mkdir -p app/cart
+mkdir -p app/checkout
+mkdir -p app/checkout/success
+mkdir -p app/checkout/cancel
+
+mkdir -p app/api/checkout
+
+mkdir -p components
+mkdir -p lib
+
+✅ Step 2: Add sample products (temporary)
+
+Create:
+
+📄 lib/products.ts
+
+export type Product = {
+  id: string;
+  slug: string;
+  name: string;
+  price: number; // price in pennies (GBP)
+  image: string;
+};
+
+export const products: Product[] = [
+  {
+    id: "prod_001",
+    slug: "care-hoodie",
+    name: "Care Hoodie",
+    price: 4500,
+    image: "/products/hoodie.jpg",
+  },
+  {
+    id: "prod_002",
+    slug: "care-tshirt",
+    name: "Care T-Shirt",
+    price: 2500,
+    image: "/products/tshirt.jpg",
+  },
+  {
+    id: "prod_003",
+    slug: "care-cap",
+    name: "Care Cap",
+    price: 1800,
+    image: "/products/cap.jpg",
+  },
+];
+
+
+✅ Add placeholder images inside:
+
+public/products/hoodie.jpg
+public/products/tshirt.jpg
+public/products/cap.jpg
+
+(You can use any images for now)
+
+✅ Step 3: Cart store (simple version)
+
+We’ll use a lightweight approach using localStorage + React state first.
+(You can switch to Redux later if you want)
+
+Create:
+
+📄 lib/cart.ts
+
+import { Product } from "./products";
+
+export type CartItem = Product & { quantity: number };
+
+const CART_KEY = "madebycare_cart";
+
+export function getCart(): CartItem[] {
+  if (typeof window === "undefined") return [];
+  const raw = localStorage.getItem(CART_KEY);
+  return raw ? JSON.parse(raw) : [];
+}
+
+export function saveCart(cart: CartItem[]) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+export function addToCart(product: Product) {
+  const cart = getCart();
+  const existing = cart.find((item) => item.id === product.id);
+
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+
+  saveCart(cart);
+  return cart;
+}
+
+export function removeFromCart(productId: string) {
+  const cart = getCart().filter((item) => item.id !== productId);
+  saveCart(cart);
+  return cart;
+}
+
+export function updateQuantity(productId: string, quantity: number) {
+  const cart = getCart()
+    .map((item) => (item.id === productId ? { ...item, quantity } : item))
+    .filter((item) => item.quantity > 0);
+
+  saveCart(cart);
+  return cart;
+}
+
+export function clearCart() {
+  saveCart([]);
+}
+
+✅ Step 4: Create UI components
+✅ ProductCard component
+
+📄 components/ProductCard.tsx
+
+import Link from "next/link";
+import { Product } from "@/lib/products";
+
+export function ProductCard({ product }: { product: Product }) {
+  return (
+    <div style={{ border: "1px solid #ddd", padding: 16, borderRadius: 12 }}>
+      <img
+        src={product.image}
+        alt={product.name}
+        style={{ width: "100%", borderRadius: 12 }}
+      />
+      <h3 style={{ marginTop: 12 }}>{product.name}</h3>
+      <p>£{(product.price / 100).toFixed(2)}</p>
+
+      <Link href={`/shop/${product.slug}`}>View</Link>
+    </div>
+  );
+}
+
+✅ AddToCartButton component
+
+📄 components/AddToCartButton.tsx
+
+"use client";
+
+import { Product } from "@/lib/products";
+import { addToCart } from "@/lib/cart";
+import { useState } from "react";
+
+export function AddToCartButton({ product }: { product: Product }) {
+  const [added, setAdded] = useState(false);
+
+  function handleAdd() {
+    addToCart(product);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 800);
+  }
+
+  return (
+    <button
+      onClick={handleAdd}
+      style={{
+        padding: "10px 14px",
+        borderRadius: 10,
+        border: "1px solid #000",
+        cursor: "pointer",
+        marginTop: 10,
+      }}
+    >
+      {added ? "Added ✅" : "Add to cart"}
+    </button>
+  );
+}
+
+✅ Step 5: Build /shop page (Product list)
+
+📄 app/shop/page.tsx
+
+import { products } from "@/lib/products";
+import { ProductCard } from "@/components/ProductCard";
+
+export default function ShopPage() {
+  return (
+    <main style={{ padding: 24 }}>
+      <h1>Shop</h1>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+          gap: 16,
+          marginTop: 20,
+        }}
+      >
+        {products.map((p) => (
+          <ProductCard key={p.id} product={p} />
+        ))}
+      </div>
+    </main>
+  );
+}
+
+
+✅ URL:
+👉 https://madebycare.co.uk/shop (on your VPS later)
+
+✅ Step 6: Build product page /shop/[slug]
+
+📄 app/shop/[slug]/page.tsx
+
+import { products } from "@/lib/products";
+import { notFound } from "next/navigation";
+import { AddToCartButton } from "@/components/AddToCartButton";
+
+export default function ProductPage({ params }: { params: { slug: string } }) {
+  const product = products.find((p) => p.slug === params.slug);
+
+  if (!product) return notFound();
+
+  return (
+    <main style={{ padding: 24 }}>
+      <h1>{product.name}</h1>
+
+      <img
+        src={product.image}
+        alt={product.name}
+        style={{ maxWidth: 400, width: "100%", borderRadius: 12 }}
+      />
+
+      <p style={{ marginTop: 12, fontSize: 18 }}>
+        Price: £{(product.price / 100).toFixed(2)}
+      </p>
+
+      <AddToCartButton product={product} />
+    </main>
+  );
+}
+
+
+✅ URL example:
+👉 https://madebycare.co.uk/shop/care-hoodie
+
+✅ Step 7: Build /cart page
+
+📄 app/cart/page.tsx
+
+"use client";
+
+import { useEffect, useState } from "react";
+import { CartItem, getCart, removeFromCart, updateQuantity } from "@/lib/cart";
+import Link from "next/link";
+
+export default function CartPage() {
+  const [cart, setCart] = useState<CartItem[]>([]);
+
+  useEffect(() => {
+    setCart(getCart());
+  }, []);
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  return (
+    <main style={{ padding: 24 }}>
+      <h1>Your Cart</h1>
+
+      {cart.length === 0 ? (
+        <>
+          <p>Your cart is empty.</p>
+          <Link href="/shop">Go to Shop</Link>
+        </>
+      ) : (
+        <>
+          {cart.map((item) => (
+            <div
+              key={item.id}
+              style={{
+                display: "flex",
+                gap: 16,
+                alignItems: "center",
+                borderBottom: "1px solid #eee",
+                padding: "12px 0",
+              }}
+            >
+              <img
+                src={item.image}
+                alt={item.name}
+                style={{ width: 80, borderRadius: 10 }}
+              />
+
+              <div style={{ flex: 1 }}>
+                <strong>{item.name}</strong>
+                <p>£{(item.price / 100).toFixed(2)}</p>
+
+                <label>
+                  Qty:{" "}
+                  <input
+                    type="number"
+                    min={1}
+                    value={item.quantity}
+                    onChange={(e) => {
+                      const updated = updateQuantity(
+                        item.id,
+                        Number(e.target.value)
+                      );
+                      setCart(updated);
+                    }}
+                    style={{ width: 60 }}
+                  />
+                </label>
+              </div>
+
+              <button
+                onClick={() => {
+                  const updated = removeFromCart(item.id);
+                  setCart(updated);
+                }}
+                style={{
+                  border: "1px solid red",
+                  padding: "8px 10px",
+                  borderRadius: 10,
+                  cursor: "pointer",
+                }}
+              >
+                Remove
+              </button>
+            </div>
+          ))}
+
+          <h2 style={{ marginTop: 20 }}>
+            Total: £{(total / 100).toFixed(2)}
+          </h2>
+
+          <Link href="/checkout">Go to Checkout →</Link>
+        </>
+      )}
+    </main>
+  );
+}
+
+
+✅ URL:
+👉 https://madebycare.co.uk/cart
+
+✅ Step 8: Add Stripe Checkout API (server route)
+8.1 Install Stripe
+npm install stripe
+
+8.2 Add Stripe helper
+
+📄 lib/stripe.ts
+
+import Stripe from "stripe";
+
+export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
+  apiVersion: "2024-06-20",
+});
+
+8.3 Create checkout endpoint
+
+📄 app/api/checkout/route.ts
+
+import { NextResponse } from "next/server";
+import { stripe } from "@/lib/stripe";
+
+export async function POST(req: Request) {
+  const body = await req.json();
+
+  const cart = body.cart as {
+    name: string;
+    price: number;
+    quantity: number;
+  }[];
+
+  const session = await stripe.checkout.sessions.create({
+    mode: "payment",
+    line_items: cart.map((item) => ({
+      price_data: {
+        currency: "gbp",
+        product_data: { name: item.name },
+        unit_amount: item.price,
+      },
+      quantity: item.quantity,
+    })),
+    success_url: `${process.env.NEXT_PUBLIC_APP_URL}/checkout/success`,
+    cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/checkout/cancel`,
+  });
+
+  return NextResponse.json({ url: session.url });
+}
+
+✅ Step 9: Checkout page /checkout
+
+📄 app/checkout/page.tsx
+
+"use client";
+
+import { useEffect, useState } from "react";
+import { getCart, CartItem, clearCart } from "@/lib/cart";
+
+export default function CheckoutPage() {
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setCart(getCart());
+  }, []);
+
+  async function handleCheckout() {
+    setLoading(true);
+
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ cart }),
+    });
+
+    const data = await res.json();
+
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert("Something went wrong creating Stripe session.");
+      setLoading(false);
+    }
+  }
+
+  return (
+    <main style={{ padding: 24 }}>
+      <h1>Checkout</h1>
+
+      {cart.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        <>
+          <p>Ready to pay for {cart.length} item(s).</p>
+
+          <button
+            onClick={handleCheckout}
+            disabled={loading}
+            style={{
+              padding: "12px 16px",
+              borderRadius: 10,
+              cursor: "pointer",
+              border: "1px solid #000",
+            }}
+          >
+            {loading ? "Redirecting..." : "Pay with Stripe"}
+          </button>
+        </>
+      )}
+    </main>
+  );
+}
+
+✅ Step 10: Success + Cancel pages
+
+📄 app/checkout/success/page.tsx
+
+"use client";
+
+import { useEffect } from "react";
+import { clearCart } from "@/lib/cart";
+import Link from "next/link";
+
+export default function SuccessPage() {
+  useEffect(() => {
+    clearCart();
+  }, []);
+
+  return (
+    <main style={{ padding: 24 }}>
+      <h1>Payment successful ✅</h1>
+      <p>Thank you for your order!</p>
+
+      <Link href="/shop">Continue shopping</Link>
+    </main>
+  );
+}
+
+
+📄 app/checkout/cancel/page.tsx
+
+import Link from "next/link";
+
+export default function CancelPage() {
+  return (
+    <main style={{ padding: 24 }}>
+      <h1>Payment cancelled</h1>
+      <p>No worries — you can try again any time.</p>
+
+      <Link href="/cart">Back to cart</Link>
+    </main>
+  );
+}
+
+✅ Step 11: Add required .env.local
+
+Create .env.local in project root:
+
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+STRIPE_SECRET_KEY=sk_test_xxx
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_xxx
+
+
+✅ Later on your VPS:
+
+NEXT_PUBLIC_APP_URL=https://madebycare.co.uk
+
+✅ MVP DONE 🎉
+
+You now have a working webshop flow:
+
+✅ /shop
+✅ /shop/[slug]
+✅ /cart
+✅ /checkout
+✅ Stripe hosted checkout page
+✅ success/cancel pages
+
+Next important upgrade (still Phase 1)
+
+Right now the cart is only in localStorage, so Stripe won’t verify “real products”.
+
+Next step (recommended):
+✅ Replace sample products with PostgreSQL
+✅ Create Orders table
+✅ Add Stripe webhook to confirm payment and save order ✅
+
+If you want, I’ll guide you through the next step:
+Stripe Webhook + saving orders into PostgreSQL (the proper e-commerce way).
