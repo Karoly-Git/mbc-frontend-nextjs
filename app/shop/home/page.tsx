@@ -1,16 +1,16 @@
 import Link from "next/link";
 
-export default function ShopPage() {
+export default function HomeShopPage() {
     return (
         <main style={{ padding: 24 }}>
-            <h1>Shop</h1>
+            <h1>Home</h1>
 
             <ul style={{ marginTop: 16 }}>
                 <li>
-                    <Link href="/shop/toys">Toys</Link>
+                    <Link href="/shop/home/kitchen-towels">Kitchen Towels</Link>
                 </li>
                 <li>
-                    <Link href="/shop/home">Home</Link>
+                    <Link href="/shop/home/aprons">Aprons</Link>
                 </li>
             </ul>
         </main>
