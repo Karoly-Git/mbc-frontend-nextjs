@@ -93,24 +93,7 @@ mkdir -p lib
 
 📄 lib/products.ts
 
-✅ Add placeholder images inside:
-
-public/products/
-├─ toys/
-│  └─ penguin/
-│     ├─ cyan.jpg
-│     └─ black.jpg
-├─ accessories/
-│  └─ penguin-set/
-│     ├─ yellow.jpg
-│     ├─ pink.jpg
-│     └─ blue.jpg
-└─ home/
-   └─ kitchen-towels/
-      ├─ green-small.jpg
-      ├─ green-large.jpg
-      ├─ white-small.jpg
-      └─ white-large.jpg
+✅ Add placeholder images inside
 
 
 ✅ Step 3: Cart store (simple version)

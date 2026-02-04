@@ -10,7 +10,7 @@ export type ProductCategory =
     | "accessories";
 
 /**
- * ✅ Variant = one purchasable combination of options.
+ * Variant = one purchasable combination of options.
  * Examples:
  * { bodyColor: "Cyan" }
  * { color: "Green", size: "Large" }
@@ -64,7 +64,7 @@ export type Product = {
     variants?: ProductVariant[];
 
     /**
-     * ✅ Optional: if this product can be upgraded with add-ons,
+     * Optional: if this product can be upgraded with add-ons,
      * list product IDs here (like an "accessory set" product).
      */
     addOnProductIds?: string[];
@@ -72,7 +72,7 @@ export type Product = {
 
 export const products: Product[] = [
     /**
-     * ✅ Penguin
+     * Penguin
      * Variants: Body color only
      * Add-on: Hat + scarf set (separate product)
      */
@@ -81,7 +81,7 @@ export const products: Product[] = [
         slug: "snowy-the-penguin",
         name: "Snowy the Penguin",
         price: 2500,
-        image: "/products/toys/penguin/cyan.jpg",
+        image: "/products/toys/penguins/cyan.png",
         description: "A soft handmade penguin plush, stitched with care.",
         category: "toys",
         type: "crochet-toy",
@@ -93,16 +93,16 @@ export const products: Product[] = [
 
         variants: [
             {
-                id: "var_penguin_cyan",
-                image: "/products/toys/penguin/cyan.jpg",
+                id: "var_penguin_sunny_cyan",
+                image: "/products/toys/penguins/sunny/cyan-yellow.png",
                 options: { bodyColor: "Cyan" },
                 inStock: true,
                 stock: 1,
                 heightCm: 14,
             },
             {
-                id: "var_penguin_black",
-                image: "/products/toys/penguin/black.jpg",
+                id: "var_penguin_sunny_black",
+                image: "/products/toys/penguins/sunny/black-pink.png",
                 options: { bodyColor: "Black" },
                 inStock: true,
                 stock: 1,
@@ -110,23 +110,23 @@ export const products: Product[] = [
             },
         ],
 
-        // ✅ This links the penguin to the accessory set product
+        // This links the penguin to the accessory set product
         addOnProductIds: ["prod_penguin_accessory_set"],
     },
 
     /**
-     * ✅ Accessory Set (Hat + Scarf) as a separate product
+     * Accessory Set (Hat + Scarf) as a separate product
      * Variants: color
      *
      * You can set price = 0 if it's free/included,
      * or charge extra (example: +£5.00 => 500).
      */
     {
-        id: "prod_penguin_accessory_set",
-        slug: "penguin-accessory-set",
+        id: "penguin_sunny_accessory_set",
+        slug: "penguin-sunny-accessory-set",
         name: "Hat + Scarf Accessory Set",
         price: 500, // £5.00 extra (change to 0 if included)
-        image: "/products/accessories/penguin-set/yellow.jpg",
+        image: "/products/toys/penguins/sunny/accessories/yellow.png",
         description:
             "A matching hat + scarf set for your penguin (sold as one set).",
         category: "accessories",
@@ -139,22 +139,22 @@ export const products: Product[] = [
 
         variants: [
             {
-                id: "var_penguin_set_yellow",
-                image: "/products/accessories/penguin-set/yellow.jpg",
+                id: "var_penguin_sunny_accessory_set_yellow",
+                image: "/products/toys/penguins/sunny/accessories/yellow.png",
                 options: { color: "Yellow" },
                 inStock: true,
                 stock: 5,
             },
             {
-                id: "var_penguin_set_pink",
-                image: "/products/accessories/penguin-set/pink.jpg",
+                id: "var_penguin_sunny_accessory_set_pink",
+                image: "/products/toys/penguins/sunny/accessories/pink.png",
                 options: { color: "Pink" },
                 inStock: false,
                 stock: 0,
             },
             {
-                id: "var_penguin_set_blue",
-                image: "/products/accessories/penguin-set/blue.jpg",
+                id: "var_penguin_sunny_accessory_set_blue",
+                image: "/products/toys/penguins/sunny/accessories/blue.png",
                 options: { color: "Blue" },
                 inStock: true,
                 stock: 2,
@@ -163,7 +163,7 @@ export const products: Product[] = [
     },
 
     /**
-     * ✅ Kitchen Towels
+     * Kitchen Towels
      * Variants: color + size
      */
     {
@@ -171,7 +171,7 @@ export const products: Product[] = [
         slug: "care-kitchen-towel",
         name: "Care Kitchen Towel",
         price: 900,
-        image: "/products/home/kitchen-towels/green-small.jpg",
+        image: "/products/home/kitchen-towels/green-small.png",
         description: "Soft and practical kitchen towel, perfect for everyday use.",
         category: "home",
         type: "kitchen-towel",
@@ -184,7 +184,7 @@ export const products: Product[] = [
         variants: [
             {
                 id: "var_kitchen_towel_green_small",
-                image: "/products/home/kitchen-towels/green-small.jpg",
+                image: "/products/home/kitchen-towels/green-small.png",
                 options: { color: "Green", size: "Small" },
                 inStock: true,
                 stock: 10,
@@ -193,7 +193,7 @@ export const products: Product[] = [
             },
             {
                 id: "var_kitchen_towel_green_large",
-                image: "/products/home/kitchen-towels/green-large.jpg",
+                image: "/products/home/kitchen-towels/green-large.png",
                 options: { color: "Green", size: "Large" },
                 inStock: true,
                 stock: 6,
@@ -203,7 +203,7 @@ export const products: Product[] = [
             },
             {
                 id: "var_kitchen_towel_white_small",
-                image: "/products/home/kitchen-towels/white-small.jpg",
+                image: "/products/home/kitchen-towels/white-small.png",
                 options: { color: "White", size: "Small" },
                 inStock: true,
                 stock: 10,
@@ -212,7 +212,7 @@ export const products: Product[] = [
             },
             {
                 id: "var_kitchen_towel_white_large",
-                image: "/products/home/kitchen-towels/white-large.jpg",
+                image: "/products/home/kitchen-towels/white-large.png",
                 options: { color: "White", size: "Large" },
                 inStock: true,
                 stock: 6,
