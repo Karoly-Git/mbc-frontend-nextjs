@@ -34,6 +34,11 @@
   display: grid;
   place-items: center;
   overflow: hidden;
+  position: relative;
+}
+.siteHeader .headerInner .headerLeft .brand .brandLogo img {
+  width: 56px;
+  height: 56px;
 }
 .siteHeader .headerInner .headerLeft .searchBox {
   display: flex;
@@ -45,11 +50,14 @@
   background: #fff;
   width: 280px;
 }
-.siteHeader .headerInner .headerLeft .searchBox .searchIcon {
-  font-size: 16px;
-  color: #333;
-  opacity: 0.65;
-  line-height: 1;
+.siteHeader .headerInner .headerLeft .searchBox .searchIconBtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: inherit;
 }
 .siteHeader .headerInner .headerLeft .searchBox input {
   border: none;
