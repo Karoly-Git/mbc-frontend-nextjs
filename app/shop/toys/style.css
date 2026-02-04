@@ -1,0 +1,92 @@
+.toysPage {
+  padding: 48px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.toysPage .hero {
+  margin-bottom: 34px;
+}
+.toysPage .hero .breadcrumb {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+.toysPage .hero .breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+.toysPage .hero .breadcrumb a:hover {
+  text-decoration: underline;
+}
+.toysPage .hero .breadcrumb span {
+  margin: 0 6px;
+  color: #aaa;
+}
+.toysPage .hero h1 {
+  font-size: 40px;
+  margin: 0;
+  line-height: 1.1;
+}
+.toysPage .hero p {
+  margin-top: 14px;
+  font-size: 18px;
+  color: #555;
+  max-width: 680px;
+  line-height: 1.5;
+}
+.toysPage .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.toysPage .collectionCard {
+  border: 1px solid #eaeaea;
+  border-radius: 18px;
+  padding: 22px;
+  background: #fff;
+  transition: 0.2s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  color: inherit;
+}
+.toysPage .collectionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.07);
+}
+.toysPage .collectionCard .meta {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+}
+.toysPage .collectionCard .title {
+  font-size: 24px;
+  margin: 8px 0;
+}
+.toysPage .collectionCard .text {
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+.toysPage .collectionCard .actionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+.toysPage .collectionCard .actionRow .action {
+  font-weight: 600;
+}
+.toysPage .collectionCard .actionRow .count {
+  font-size: 14px;
+  color: #777;
+}
+.toysPage .note {
+  margin-top: 26px;
+  padding: 14px 16px;
+  border: 1px solid #eaeaea;
+  border-radius: 14px;
+  background: #fafafa;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}/*# sourceMappingURL=style.css.map */

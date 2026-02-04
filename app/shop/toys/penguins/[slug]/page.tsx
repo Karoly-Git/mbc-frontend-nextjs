@@ -1,68 +1,65 @@
+import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
-import { getAddOnProducts, getProductByPath } from "@/lib/productHelpers";
-import { VariantList } from "@/components/VariantList";
-import { AddOnList } from "@/components/AddOnList";
+import "./style.css";
+import { getProductsByCollection } from "@/lib/productHelpers";
 
-export default async function PenguinProductPage({
-    params,
-}: {
-    params: Promise<{ slug: string }>;
-}) {
-    const { slug } = await params;
-
-    const product = getProductByPath({
+export default function PenguinsPage() {
+    const penguins = getProductsByCollection({
         section: "toys",
         collection: "penguins",
-        slug,
     });
 
-    if (!product) return notFound();
-
-    const addOns = getAddOnProducts(product);
-
     return (
-        <main style={{ padding: 24, maxWidth: 1000, margin: "0 auto" }}>
-            <div style={{ display: "grid", gap: 24, gridTemplateColumns: "1fr 1fr" }}>
-                <div>
-                    <Image
-                        src={product.image}
-                        alt={product.name}
-                        width={600}
-                        height={500}
-                        style={{ width: "100%", height: "auto", borderRadius: 16 }}
-                    />
+        <main className="penguinsPage">
+            {/* Hero */}
+            <header className="hero">
+                <div className="breadcrumb">
+                    <Link href="/shop">Shop</Link>
+                    <span>/</span>
+                    <Link href="/shop/toys">Toys</Link>
+                    <span>/</span>
+                    <span>Penguins</span>
                 </div>
 
-                <div>
-                    <h1 style={{ fontSize: 32, marginBottom: 10 }}>{product.name}</h1>
-                    <p style={{ fontSize: 18, marginBottom: 10 }}>
-                        £{(product.price / 100).toFixed(2)}
-                    </p>
+                <h1>Penguins</h1>
 
-                    {product.description && (
-                        <p style={{ color: "#555", lineHeight: 1.5 }}>
-                            {product.description}
-                        </p>
-                    )}
+                <p>
+                    Meet our penguin collection — handmade crochet friends with different
+                    body colours and optional accessories.
+                </p>
+            </header>
 
-                    <div style={{ marginTop: 16 }}>
-                        <p>
-                            <strong>Made to order:</strong>{" "}
-                            {product.madeToOrder ? "Yes ✅" : "No"}
-                        </p>
-                        <p>
-                            <strong>Material:</strong> {product.material ?? "—"}
-                        </p>
+            {/* Product grid */}
+            <section className="grid">
+                {penguins.map((p) => (
+                    <div key={p.id} className="card">
+                        <Link href={`/shop/${p.section}/${p.collection}/${p.slug}`}>
+                            <div className="imageWrap">
+                                <Image
+                                    src={p.image}
+                                    alt={p.name}
+                                    fill
+                                    style={{ objectFit: "cover" }}
+                                />
+                            </div>
+
+                            <div className="content">
+                                <h3 className="name">{p.name}</h3>
+                                <p className="price">£{(p.price / 100).toFixed(2)}</p>
+
+                                {p.description && <p className="desc">{p.description}</p>}
+
+                                <p className="action">View product →</p>
+                            </div>
+                        </Link>
                     </div>
-                </div>
+                ))}
+            </section>
+
+            <div className="note">
+                Each penguin is handmade with care and made-to-order. More designs will
+                be added soon ✨
             </div>
-
-            {product.variants && product.variants.length > 0 && (
-                <VariantList variants={product.variants} />
-            )}
-
-            <AddOnList addOns={addOns} />
         </main>
     );
 }
