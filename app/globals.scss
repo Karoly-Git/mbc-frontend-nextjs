@@ -1,10 +1,68 @@
+@use "./colors.scss" as colors;
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
+:root {
+  /* Core neutrals */
+  --color-super-dark: #{colors.$super-dark};
+  --color-dark: #{colors.$dark};
+  --color-light: #{colors.$light};
+  --color-super-light: #{colors.$super-light};
+
+  /* Soft backgrounds */
+  --color-silk: #{colors.$silk};
+  --color-linen: #{colors.$linen};
+  --color-sand: #{colors.$sand};
+
+  /* Metallic accents */
+  --color-gold: #{colors.$gold};
+  --color-champagne: #{colors.$champagne};
+  --color-brass: #{colors.$brass};
+
+  /* Greens */
+  --color-forest: #{colors.$forest};
+  --color-sage: #{colors.$sage};
+  --color-olive: #{colors.$olive};
+
+  /* Earth & clay */
+  --color-terracotta: #{colors.$terracotta};
+  --color-clay: #{colors.$clay};
+
+  /* Soft warmth */
+  --color-blush: #{colors.$blush};
+
+  /* Reds */
+  --color-rosewood: #{colors.$rosewood};
+  --color-brick: #{colors.$brick};
+  --color-soft-rose: #{colors.$soft-rose};
+
+  /* Oranges */
+  --color-apricot: #{colors.$apricot};
+  --color-ochre: #{colors.$ochre};
+  --color-burnt-orange: #{colors.$burnt-orange};
+
+  /* Blues */
+  --color-slate-blue: #{colors.$slate-blue};
+  --color-dusty-blue: #{colors.$dusty-blue};
+  --color-ink-blue: #{colors.$ink-blue};
+
+  /* Semantic aliases (recommended) */
+  --color-background: var(--color-silk);
+  --color-surface: var(--color-super-light);
+  --color-text-primary: var(--color-dark);
+  --color-text-secondary: var(--color-light);
+
+  --color-accent: var(--color-gold);
+  --color-accent-soft: var(--color-champagne);
+
+  --color-success: var(--color-forest);
+  --color-warning: var(--color-ochre);
+  --color-info: var(--color-slate-blue);
+
+  /* App defaults */
+  --background: var(--color-background);
+  --foreground: var(--color-text-primary);
+}
 
 @media (prefers-color-scheme: dark) {
   :root {

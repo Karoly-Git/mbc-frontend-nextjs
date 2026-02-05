@@ -1,0 +1,97 @@
+@use "../../app/colors.scss" as colors;
+
+.blogPage {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 72px 22px 96px;
+    color: colors.$super-dark;
+
+    /* HERO */
+    .blogHero {
+        margin-bottom: 64px;
+
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: colors.$light;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            font-size: 40px;
+            line-height: 1.25;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .intro {
+            margin-top: 20px;
+            font-size: 17px;
+            line-height: 1.65;
+            color: colors.$dark;
+            max-width: 720px;
+        }
+    }
+
+    /* POSTS */
+    .posts {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .postCard {
+        background-color: #fff;
+        border: 1px solid rgba(colors.$super-light, 0.9);
+        border-radius: 22px;
+        padding: 30px 32px;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.04);
+
+        .meta {
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: colors.$light;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: colors.$super-dark;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.65;
+            color: colors.$dark;
+            max-width: 640px;
+            margin-bottom: 16px;
+        }
+
+        a {
+            font-size: 14px;
+            font-weight: 600;
+            color: colors.$gold;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 4px;
+            }
+        }
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .blogPage {
+        padding-top: 56px;
+
+        .blogHero h1 {
+            font-size: 34px;
+        }
+    }
+}

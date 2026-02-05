@@ -1,0 +1,31 @@
+.uiButton {
+    --btn-text: var(--color-super-dark);
+    --btn-bg: transparent;
+    --btn-border: transparent;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 32px;
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+
+    color: var(--btn-text);
+    background-color: var(--btn-bg);
+    border: 1px solid var(--btn-border);
+
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+    }
+}

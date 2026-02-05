@@ -1,0 +1,108 @@
+@use "../../app/colors.scss" as colors;
+
+.shippingPage {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 72px 22px 96px;
+    color: colors.$super-dark;
+
+    /* HERO */
+    .shippingHero {
+        margin-bottom: 64px;
+
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: colors.$light;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            font-size: 40px;
+            line-height: 1.25;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .intro {
+            margin-top: 20px;
+            font-size: 17px;
+            line-height: 1.65;
+            color: colors.$dark;
+            max-width: 720px;
+        }
+    }
+
+    /* SECTIONS */
+    .shippingSection {
+        margin-top: 56px;
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: colors.$dark;
+            max-width: 720px;
+
+            &+p {
+                margin-top: 14px;
+            }
+        }
+
+        ul {
+            margin: 18px 0 18px 18px;
+            padding: 0;
+
+            li {
+                font-size: 15px;
+                line-height: 1.6;
+                color: colors.$dark;
+                margin-bottom: 10px;
+
+                strong {
+                    color: colors.$super-dark;
+                }
+            }
+        }
+
+        a {
+            color: colors.$gold;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+        }
+    }
+
+    /* CLOSING */
+    .shippingClosing {
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid rgba(colors.$super-light, 0.6);
+
+        p {
+            font-size: 16px;
+            color: colors.$dark;
+            max-width: 620px;
+        }
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .shippingPage {
+        padding-top: 56px;
+
+        .shippingHero h1 {
+            font-size: 34px;
+        }
+    }
+}

@@ -1,0 +1,103 @@
+@use "../../app/colors.scss" as colors;
+
+.aboutPage {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 72px 22px 96px;
+    color: colors.$super-dark;
+
+    /* HERO */
+    .aboutHero {
+        margin-bottom: 64px;
+
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: colors.$light;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .intro {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.65;
+            color: colors.$dark;
+            max-width: 680px;
+        }
+    }
+
+    /* SECTIONS */
+    .aboutSection {
+        margin-top: 56px;
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: colors.$dark;
+            max-width: 720px;
+
+            &+p {
+                margin-top: 14px;
+            }
+        }
+    }
+
+    /* VALUES */
+    .values {
+        margin-top: 64px;
+    }
+
+    .valuesGrid {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+    }
+
+    .valueCard {
+        background-color: #fff;
+        border: 1px solid rgba(colors.$super-light, 0.9);
+        border-radius: 20px;
+        padding: 26px;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.03);
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: colors.$dark;
+        }
+    }
+
+    /* CLOSING */
+    .aboutClosing {
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid rgba(colors.$super-light, 0.6);
+
+        p {
+            font-size: 16px;
+            color: colors.$dark;
+            max-width: 600px;
+        }
+    }
+}

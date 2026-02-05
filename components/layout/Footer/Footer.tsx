@@ -11,7 +11,7 @@ export default function Footer() {
                 <div className="footerCol">
                     <h4>About</h4>
                     <Link href="/about">About Us</Link>
-                    <Link href="/mission">Our Values</Link>
+                    <Link href="/our-values">Our Values</Link>
                     <Link href="/blog">From the Workshop</Link>
                     <Link href="/sustainability">Sustainability</Link>
                 </div>

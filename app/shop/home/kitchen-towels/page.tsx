@@ -1,4 +1,4 @@
-import { ProductCard } from "@/components/ProductCard";
+import { ProductCard } from "@/app/components/ProductCard";
 import { getProductsByCollection } from "@/lib/productHelpers";
 
 export default function KitchenTowelsPage() {

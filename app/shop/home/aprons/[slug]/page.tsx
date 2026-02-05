@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getProductByPath } from "@/lib/productHelpers";
-import { VariantList } from "@/components/VariantList";
+import { VariantList } from "@/app/components/VariantList";
 
 export default async function ApronProductPage({
     params,

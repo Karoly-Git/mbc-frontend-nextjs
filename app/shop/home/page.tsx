@@ -1,13 +1,22 @@
 import Link from "next/link";
 import "./style.scss";
 
+import NavButton from "../../../components/ui/NavButton";
+
 export default function HomeShopPage() {
     return (
         <main className="homeShopPage">
             {/* Hero */}
             <header className="hero">
                 <div className="breadcrumb">
-                    <Link href="/shop">Shop</Link>
+                    <NavButton
+                        href="/shop"
+                        textColor="rgb(114, 114, 114)"
+                        bgColor="transparent"
+                    >
+                        Shop
+                    </NavButton>
+
                     <span>/</span>
                     <span>Home</span>
                 </div>
@@ -19,7 +28,6 @@ export default function HomeShopPage() {
                     with kitchen towels and soon expanding with more home items.
                 </p>
             </header>
-
             {/* Collections */}
             <section className="grid">
                 <Link href="/shop/home/kitchen-towels" className="collectionCard">
