@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import "./style.css";
+import "./style.scss";
 import { getProductsByCollection } from "@/lib/productHelpers";
 
 export default function PenguinsPage() {

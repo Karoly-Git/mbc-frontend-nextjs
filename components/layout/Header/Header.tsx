@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import "./Header.css";
+import "./Header.scss";
 
 import { usePathname } from "next/navigation";
 import { TiShoppingCart as CartIcon } from "react-icons/ti";

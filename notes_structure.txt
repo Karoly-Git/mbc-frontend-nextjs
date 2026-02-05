@@ -1,0 +1,67 @@
+/my-webshop
+├── app/
+│   ├── layout.tsx              # Root layout (header/footer)
+│   ├── page.tsx                # Home page
+│   ├── globals.css
+│   ├── error.tsx               # Global error boundary
+│   ├── not-found.tsx           # 404 page
+│
+│   ├── products/
+│   │   ├── page.tsx            # Product listing
+│   │   └── [slug]/
+│   │       └── page.tsx        # Product detail page
+│
+│   ├── cart/
+│   │   └── page.tsx            # Shopping cart
+│
+│   ├── checkout/
+│   │   └── page.tsx            # Checkout flow
+│
+│   ├── api/
+│   │   ├── products/
+│   │   │   └── route.ts        # GET products
+│   │   ├── cart/
+│   │   │   └── route.ts        # Cart actions
+│   │   └── checkout/
+│   │       └── route.ts        # Payments / orders
+│
+│   └── (auth)/
+│       ├── login/
+│       │   └── page.tsx
+│       └── register/
+│           └── page.tsx
+│
+├── components/
+│   ├── ui/                     # Reusable UI (buttons, modals)
+│   ├── layout/                 # Header, Footer, Nav
+│   ├── product/
+│   │   ├── ProductCard.tsx
+│   │   └── ProductGallery.tsx
+│   └── cart/
+│       └── CartItem.tsx
+│
+├── lib/
+│   ├── db.ts                   # Database client
+│   ├── api.ts                  # API helpers
+│   ├── auth.ts                 # Auth helpers
+│   └── stripe.ts               # Payment integration
+│
+├── hooks/
+│   ├── useCart.ts
+│   └── useAuth.ts
+│
+├── store/
+│   └── cartStore.ts            # Zustand / Redux store
+│
+├── types/
+│   ├── product.ts
+│   └── cart.ts
+│
+├── public/
+│   └── images/
+│
+├── middleware.ts               # Auth / redirects
+├── next.config.js
+├── tsconfig.json
+├── package.json
+└── README.md
