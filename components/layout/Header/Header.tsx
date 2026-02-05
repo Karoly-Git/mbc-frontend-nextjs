@@ -73,7 +73,7 @@ export default function Header() {
                         href="/contact"
                         className={`navItem ${isActive("/contact") ? "active" : ""}`}
                     >
-                        Reach us
+                        Reach Us
                     </Link>
                 </nav>
 
