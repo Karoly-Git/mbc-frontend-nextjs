@@ -11,7 +11,7 @@
         height: 78px;
         max-width: 1400px;
         margin: 0 auto;
-        padding: 0 22px;
+        padding: 45px 22px;
 
         display: flex;
         align-items: center;
@@ -31,14 +31,13 @@
                 text-decoration: none;
 
                 .brandLogo {
-                    width: 56px;
-                    height: 56px;
-                    border-radius: 999px;
+                    width: 80px;
+                    height: 80px;
                     display: grid;
                     place-items: center;
                     overflow: hidden;
 
-                    position: relative; // ✅ required for next/image fill
+                    position: relative;
                 }
             }
 
@@ -109,7 +108,6 @@
 
                 &.active {
                     color: colors.$light;
-                    opacity: 0.65;
                     text-decoration: underline;
                     text-underline-offset: 4px;
                     text-decoration-thickness: 2px;
@@ -166,7 +164,7 @@
                 align-items: center;
                 gap: 8px;
                 text-decoration: none;
-                color: colors.$super-dark;
+                color: colors.$dark;
                 font-size: 14px;
                 font-weight: 600;
 

@@ -30,7 +30,7 @@ export default function Header() {
                     <Link href="/" className="brand">
                         <div className="brandLogo">
                             <Image
-                                src="/logo.png"
+                                src="/logo.svg"
                                 alt="Made by Care"
                                 fill
                                 priority

@@ -16,7 +16,7 @@ export default function Home() {
       <div className="landing__content">
         {/* Logo */}
         <Image
-          src="/logo.png"
+          src="/logo.svg"
           alt="Made by Care logo"
           width={220}
           height={220}
