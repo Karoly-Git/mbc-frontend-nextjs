@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .siteHeader {
   background: #fbfaf4;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -89,7 +88,6 @@
   position: relative;
   white-space: nowrap;
   padding: 6px 2px;
-  /* ✅ Active route styling */
 }
 .siteHeader .headerInner .headerNav .navItem:hover {
   color: rgb(143, 106, 12);
@@ -97,16 +95,9 @@
 .siteHeader .headerInner .headerNav .navItem.active {
   color: #4d7a71;
   opacity: 0.65;
-}
-.siteHeader .headerInner .headerNav .navItem.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5;
-  width: 100%;
-  height: 2px;
-  background: #6fa89d;
-  border-radius: 999px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
 .siteHeader .headerInner .headerRight {
   display: flex;
