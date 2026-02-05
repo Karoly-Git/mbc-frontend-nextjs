@@ -5,38 +5,38 @@ export default function ShopIntro() {
         <section className="shopIntro">
             <div className="introGrid">
                 <div className="introCard">
-                    <h3>Crocheted toys</h3>
+                    <h3>Crocheted Toys</h3>
                     <div className="image placeholder" />
                     <NavButton
                         href="/shop/all"
                         bgColor="var(--color-terracotta)"
                         textColor="var(--color-super-light)"
                     >
-                        Shop crocheted toys
+                        Shop toys
                     </NavButton>
                 </div>
 
                 <div className="introCard">
-                    <h3>Home textiles</h3>
+                    <h3>Kitchen & Home</h3>
                     <div className="image placeholder" />
                     <NavButton
                         href="/shop/all"
                         bgColor="var(--color-ink-blue)"
                         textColor="var(--color-super-light)"
                     >
-                        Shop home textiles
+                        Shop home essentials
                     </NavButton>
                 </div>
 
                 <div className="introCard">
-                    <h3>Shop by collection</h3>
+                    <h3>Baby Essentials</h3>
                     <div className="image placeholder" />
                     <NavButton
                         href="/shop/all"
                         bgColor="var(--color-forest)"
                         textColor="var(--color-super-light)"
                     >
-                        Shop by collection
+                        Shop for Babies
                     </NavButton>
 
                 </div>
