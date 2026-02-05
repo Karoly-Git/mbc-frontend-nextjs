@@ -238,7 +238,10 @@
 
     /* WHY BUY */
     .whyMadeByCare {
-        background-color: colors.$terracotta;
+        background-color: colors.$slate-blue;
+        background-color: colors.$dusty-blue;
+        background-color: colors.$ink-blue;
+        background-color: colors.$rosewood;
         padding: 120px 22px;
         text-align: center;
         color: colors.$super-light;
@@ -564,10 +567,10 @@
 
     /* PROCESS */
     .processSection {
-        background-color: colors.$terracotta;
+        background-color: colors.$super-light;
         padding: 120px 22px;
         text-align: center;
-        color: colors.$super-light;
+        color: colors.$dark;
 
         h2 {
             font-size: 36px;
@@ -616,12 +619,12 @@
 
     /* HELP */
     .helpSection {
-        background-color: colors.$forest;
-        padding: 64px 22px;
+        background-color: colors.$ink-blue;
+        padding: 64px 15%;
         color: colors.$super-light;
 
         .helpInner {
-            max-width: 1200px;
+            max-width: 500px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr auto;
