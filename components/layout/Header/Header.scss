@@ -2,7 +2,7 @@
 
 .siteHeader {
     background-color: colors.$silk;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(colors.$super-light, 0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -192,5 +192,6 @@
     .headerAccent {
         height: 8px;
         background-color: colors.$gold;
+        display: none;
     }
 }
