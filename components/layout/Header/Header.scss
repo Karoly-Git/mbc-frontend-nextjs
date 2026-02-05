@@ -1,6 +1,9 @@
 .siteHeader {
     background: #fbfaf4;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
     .headerInner {
         height: 78px;
