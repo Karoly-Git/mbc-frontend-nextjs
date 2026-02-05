@@ -50,6 +50,12 @@ export default function Header() {
                 {/* Center */}
                 <nav className="headerNav">
                     <Link
+                        href="/"
+                        className={`navItem ${isActive("/") ? "active" : ""}`}
+                    >
+                        Home
+                    </Link>
+                    <Link
                         href="/shop"
                         className={`navItem ${isActive("/shop") ? "active" : ""}`}
                     >

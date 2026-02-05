@@ -1,5 +1,7 @@
+@use "../../../app/colors.scss" as colors;
+
 .siteHeader {
-    background: #fbfaf4;
+    background-color: colors.$silk;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
@@ -53,7 +55,7 @@
 
                 .searchIcon {
                     font-size: 16px;
-                    color: #333;
+                    color: colors.$light;
                     opacity: 0.65;
                     line-height: 1;
 
@@ -73,10 +75,10 @@
                     width: 100%;
                     font-size: 14px;
                     background: transparent;
-                    color: #111;
+                    color: colors.$dark;
 
                     &::placeholder {
-                        color: #999;
+                        color: colors.$light;
                     }
                 }
             }
@@ -94,7 +96,7 @@
                 font-size: 14px;
                 font-weight: 600;
                 text-decoration: none;
-                color: #111;
+                color: colors.$super-dark;
                 position: relative;
                 white-space: nowrap;
                 //acity: 0.92;
@@ -102,11 +104,11 @@
                 padding: 6px 2px;
 
                 &:hover {
-                    color: rgb(143, 106, 12);
+                    color: colors.$gold;
                 }
 
                 &.active {
-                    color: #4d7a71;
+                    color: colors.$light;
                     opacity: 0.65;
                     text-decoration: underline;
                     text-underline-offset: 4px;
@@ -127,7 +129,7 @@
                 border: none;
                 background: transparent;
                 font-size: 13px;
-                color: #333;
+                color: colors.$dark;
                 cursor: pointer;
                 outline: none;
             }
@@ -137,7 +139,7 @@
                 align-items: center;
                 gap: 6px;
                 text-decoration: none;
-                color: #111;
+                color: colors.$gold;
                 position: relative;
 
                 .icon {
@@ -164,7 +166,7 @@
                 align-items: center;
                 gap: 8px;
                 text-decoration: none;
-                color: #111;
+                color: colors.$super-dark;
                 font-size: 14px;
                 font-weight: 600;
 
@@ -189,6 +191,6 @@
     /* Bottom green bar */
     .headerAccent {
         height: 8px;
-        background: #2f6c53;
+        background-color: colors.$gold;
     }
 }
