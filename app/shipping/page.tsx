@@ -9,7 +9,7 @@ export default function ShippingPage() {
                 <h1>Everything you need to know before ordering</h1>
                 <p className="intro">
                     We aim to make the process as simple and transparent as
-                    possible. Below you’ll find details about shipping,
+                    possible. Below you'll find details about shipping,
                     delivery times, and returns.
                 </p>
             </header>
@@ -40,7 +40,7 @@ export default function ShippingPage() {
                 </ul>
 
                 <p>
-                    You’ll receive a confirmation email once your order has
+                    You'll receive a confirmation email once your order has
                     been dispatched.
                 </p>
             </section>
@@ -51,8 +51,8 @@ export default function ShippingPage() {
 
                 <p>
                     As our items are handmade, we review returns on a
-                    case-by-case basis. If something isn’t quite right, please
-                    get in touch and we’ll do our best to help.
+                    case-by-case basis. If something isn't quite right, please
+                    get in touch and we'll do our best to help.
                 </p>
 
                 <ul>
@@ -79,8 +79,8 @@ export default function ShippingPage() {
             {/* Closing */}
             <section className="shippingClosing">
                 <p>
-                    If you’re unsure about anything before ordering, don’t
-                    hesitate to reach out. We’re always happy to help.
+                    If you're unsure about anything before ordering, don't
+                    hesitate to reach out. We're always happy to help.
                 </p>
             </section>
         </main>

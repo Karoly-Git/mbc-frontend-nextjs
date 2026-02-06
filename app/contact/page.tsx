@@ -6,10 +6,10 @@ export default function ContactPage() {
             {/* Hero */}
             <header className="contactHero">
                 <p className="eyebrow">Reach Us</p>
-                <h1>We’re always happy to hear from you</h1>
+                <h1>We're always happy to hear from you</h1>
                 <p className="intro">
                     Whether you have a question about our products, an order,
-                    or just want to say hello — feel free to reach out. We’ll
+                    or just want to say hello — feel free to reach out. We'll
                     get back to you as soon as we can.
                 </p>
             </header>
@@ -21,7 +21,7 @@ export default function ContactPage() {
                     <h2>Get in touch</h2>
 
                     <p>
-                        We’re a small family business, so every message is read
+                        We're a small family business, so every message is read
                         personally. Please allow a little time for us to reply,
                         especially during busy periods.
                     </p>

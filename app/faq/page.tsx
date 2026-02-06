@@ -6,11 +6,11 @@ export default function FaqPage() {
             {/* Hero */}
             <header className="faqHero">
                 <p className="eyebrow">FAQs</p>
-                <h1>Questions we’re often asked</h1>
+                <h1>Questions we're often asked</h1>
                 <p className="intro">
-                    If you’re wondering about our products, orders, or process,
-                    you’ll likely find the answer here. If not, feel free to
-                    reach out — we’re always happy to help.
+                    If you're wondering about our products, orders, or process,
+                    you'll likely find the answer here. If not, feel free to
+                    reach out — we're always happy to help.
                 </p>
             </header>
 
@@ -30,7 +30,7 @@ export default function FaqPage() {
                     <p>
                         Most items are made in small batches. If an item is in
                         stock, it will ship quickly. Made-to-order pieces may
-                        take a little longer, and we’ll always keep you informed.
+                        take a little longer, and we'll always keep you informed.
                     </p>
                 </div>
 
@@ -38,15 +38,15 @@ export default function FaqPage() {
                     <h2>Do you ship internationally?</h2>
                     <p>
                         We currently ship within the UK, with plans to expand in
-                        the future. If you’re outside the UK, feel free to get
-                        in touch and we’ll do our best to help.
+                        the future. If you're outside the UK, feel free to get
+                        in touch and we'll do our best to help.
                     </p>
                 </div>
 
                 <div className="faqItem">
                     <h2>Can I return or exchange an item?</h2>
                     <p>
-                        If there’s an issue with your order, please contact us
+                        If there's an issue with your order, please contact us
                         as soon as possible. As handmade items are personal, we
                         review returns on a case-by-case basis.
                     </p>

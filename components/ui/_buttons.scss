@@ -1,22 +1,15 @@
 .uiButton {
-    --btn-text: var(--color-super-dark);
-    --btn-bg: transparent;
-    --btn-border: transparent;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    padding: 6px 36px;
+    padding: 8px 36px;
     border-radius: 999px;
 
     font-size: 13px;
-    //font-weight: 600;
     letter-spacing: 0.04em;
 
-    color: var(--btn-text);
-    background-color: var(--btn-bg);
-    border: 1px solid var(--btn-border);
+    border-color: transparent;
 
     text-decoration: none;
     cursor: pointer;
@@ -25,7 +18,30 @@
     transition: opacity 0.2s ease, transform 0.2s ease;
 
     &:hover {
-        opacity: 0.9;
-        transform: translateY(-1px);
+        transform: translateY(-2px);
     }
+}
+
+.navButton {
+    background-color: rgb(110, 120, 130);
+    color: white;
+
+    &:hover {
+        background-color: rgb(85, 95, 105);
+
+    }
+}
+
+.faqBtn {
+    background-color: white;
+    color: black;
+
+    &:hover {
+        background-color: white;
+    }
+}
+
+.helpBtn {
+    background-color: transparent;
+    border: 1px solid white;
 }

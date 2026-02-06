@@ -104,7 +104,7 @@ mkdir -p lib
 
 ✅ Step 3: Cart store (simple version)
 
-We’ll use a lightweight approach using localStorage + React state first.
+We'll use a lightweight approach using localStorage + React state first.
 (You can switch to Redux later if you want)
 
 Create:
@@ -566,12 +566,12 @@ You now have a working webshop flow:
 
 Next important upgrade (still Phase 1)
 
-Right now the cart is only in localStorage, so Stripe won’t verify “real products”.
+Right now the cart is only in localStorage, so Stripe won't verify “real products”.
 
 Next step (recommended):
 ✅ Replace sample products with PostgreSQL
 ✅ Create Orders table
 ✅ Add Stripe webhook to confirm payment and save order ✅
 
-If you want, I’ll guide you through the next step:
+If you want, I'll guide you through the next step:
 Stripe Webhook + saving orders into PostgreSQL (the proper e-commerce way).

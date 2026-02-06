@@ -87,7 +87,7 @@ export default function PrivacyPage() {
             <section className="privacyClosing">
                 <p>
                     If you have any questions about this policy or how your data
-                    is handled, please don’t hesitate to get in touch.
+                    is handled, please don't hesitate to get in touch.
                 </p>
             </section>
         </main>

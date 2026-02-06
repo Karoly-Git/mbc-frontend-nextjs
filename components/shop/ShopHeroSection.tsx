@@ -1,6 +1,6 @@
 import NavButton from "../ui/NavButton";
 
-export default function ShopHero() {
+export default function ShopHeroSection() {
     return (
         <section className="shopHero">
             <div className="heroMedia">
@@ -20,11 +20,7 @@ export default function ShopHero() {
                     New handmade pieces released regularly
                 </p>
 
-                <NavButton
-                    href="/shop/all"
-                    bgColor="var(--color-forest)"
-                    textColor="var(--color-super-light)"
-                >
+                <NavButton href="/shop/all">
                     Shop all
                 </NavButton>
             </div>

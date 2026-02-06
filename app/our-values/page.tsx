@@ -20,7 +20,7 @@ export default function ValuesPage() {
                 <div className="valueText">
                     <h2>Handmade, not mass-made</h2>
                     <p>
-                        Every item is made by hand in our workshop. We don’t use
+                        Every item is made by hand in our workshop. We don't use
                         machines or mass production — just time, care, and
                         patience in every stitch.
                     </p>
@@ -69,7 +69,7 @@ export default function ValuesPage() {
                 <div className="valueText">
                     <h2>Perfectly imperfect</h2>
                     <p>
-                        Handmade items are never identical — and that’s part of
+                        Handmade items are never identical — and that's part of
                         their beauty. Small variations remind us that a real
                         person made each piece.
                     </p>

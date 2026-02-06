@@ -31,7 +31,7 @@ export default function Home() {
         </p>
 
         <p className="landing__coming">
-          We’re currently preparing our website.
+          We're currently preparing our website.
           <br />
           Something carefully made is coming soon.
         </p>

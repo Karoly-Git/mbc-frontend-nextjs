@@ -8,7 +8,7 @@ export default function SustainabilityPage() {
                 <p className="eyebrow">Sustainability</p>
                 <h1>Making thoughtfully, with care for people and planet</h1>
                 <p className="intro">
-                    Sustainability for us isn’t about perfection. It’s about
+                    Sustainability for us isn't about perfection. It's about
                     making considered choices, working in small batches, and
                     creating items meant to be loved for a long time.
                 </p>
@@ -72,7 +72,7 @@ export default function SustainabilityPage() {
             {/* Closing */}
             <section className="sustainabilityClosing">
                 <p>
-                    Sustainability is a journey, not a destination. We’re committed to
+                    Sustainability is a journey, not a destination. We're committed to
                     learning, improving, and doing our best — one piece at a time.
                 </p>
             </section>
