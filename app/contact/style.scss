@@ -4,7 +4,7 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 72px 22px 96px;
-    color: colors.$super-dark;
+
 
     /* HERO */
     .contactHero {
@@ -69,9 +69,7 @@
                 color: colors.$dark;
                 margin-bottom: 12px;
 
-                strong {
-                    color: colors.$super-dark;
-                }
+                strong {}
 
                 a {
                     color: colors.$gold;
@@ -89,7 +87,7 @@
     /* FORM */
     .contactForm {
         background-color: #fff;
-        border: 1px solid rgba(colors.$super-light, 0.9);
+        border: 1px solid white;
         border-radius: 22px;
         padding: 32px;
         box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
@@ -111,11 +109,11 @@
 
         input,
         textarea {
-            border: 1px solid rgba(colors.$super-light, 0.9);
+            border: 1px solid white;
             border-radius: 12px;
             padding: 12px 14px;
             font-size: 14px;
-            color: colors.$super-dark;
+
             background-color: colors.$silk;
             outline: none;
 
@@ -132,7 +130,7 @@
         button {
             margin-top: 10px;
             background-color: colors.$gold;
-            color: colors.$super-dark;
+
             border: none;
             border-radius: 999px;
             padding: 12px 22px;

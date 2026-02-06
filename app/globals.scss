@@ -4,10 +4,8 @@
 
 :root {
   /* Core neutrals */
-  --color-super-dark: #{colors.$super-dark};
   --color-dark: #{colors.$dark};
   --color-light: #{colors.$light};
-  --color-super-light: #{colors.$super-light};
 
   /* Soft backgrounds */
   --color-silk: #{colors.$silk};
@@ -48,7 +46,6 @@
 
   /* Semantic aliases (recommended) */
   --color-background: var(--color-silk);
-  --color-surface: var(--color-super-light);
   --color-text-primary: var(--color-dark);
   --color-text-secondary: var(--color-light);
 

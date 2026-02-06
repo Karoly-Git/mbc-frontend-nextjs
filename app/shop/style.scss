@@ -23,9 +23,7 @@
                 border-radius: 12px;
 
                 &.placeholder {
-                    background: linear-gradient(135deg,
-                            colors.$super-light,
-                            colors.$silk );
+                    background: white;
                 }
             }
         }
@@ -36,11 +34,11 @@
             bottom: 40px;
             transform: translateX(-50%);
             max-width: 520px;
-            background-color: colors.$super-light;
             padding: 40px 44px;
             text-align: center;
             border-radius: 6px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            background-color: colors.$silk;
 
             h1 {
                 font-size: 38px;
@@ -62,22 +60,6 @@
                 text-transform: uppercase;
                 margin-bottom: 26px;
                 color: colors.$light;
-            }
-
-            .heroBtn {
-                display: inline-block;
-                padding: 12px 36px;
-                border-radius: 999px;
-                background-color: colors.$forest;
-                color: colors.$super-light;
-                font-size: 13px;
-                font-weight: 600;
-                text-decoration: none;
-                letter-spacing: 0.04em;
-
-                &:hover {
-                    opacity: 0.9;
-                }
             }
         }
 
@@ -135,39 +117,19 @@
 
             h3 {
                 font-size: 22px;
-                font-weight: 600;
                 margin-bottom: 32px;
-                color: colors.$super-dark;
+
             }
 
             .image {
                 width: 100%;
                 max-width: 360px;
                 aspect-ratio: 1 / 1;
-                background-color: colors.$super-light;
                 border-radius: 6px;
                 margin-bottom: 28px;
 
                 &.placeholder {
-                    background: linear-gradient(135deg,
-                            colors.$super-light,
-                            colors.$silk );
-                }
-            }
-
-            .pillBtn {
-                display: inline-block;
-                padding: 10px 22px;
-                border-radius: 999px;
-                background-color: colors.$forest;
-                color: colors.$super-light;
-                font-size: 13px;
-                font-weight: 600;
-                text-decoration: none;
-                letter-spacing: 0.02em;
-
-                &:hover {
-                    opacity: 0.9;
+                    background: white;
                 }
             }
         }
@@ -175,7 +137,7 @@
 
     /* NEW ARRIVALS */
     .newArrivals {
-        background-color: colors.$silk;
+        background-color: white;
         padding: 80px 22px;
         text-align: center;
 
@@ -197,7 +159,6 @@
         }
 
         .productCard {
-            background-color: colors.$super-light;
             border-radius: 4px;
             overflow: hidden;
             display: flex;
@@ -209,18 +170,14 @@
 
         .productImage {
             flex: 1;
-            background-color: colors.$super-light;
 
             &.placeholder {
-                background: linear-gradient(135deg,
-                        colors.$super-light,
-                        colors.$silk );
+                background: white;
             }
         }
 
         .productMeta {
             background-color: colors.$forest;
-            color: colors.$super-light;
             padding: 16px 12px;
 
             .name {
@@ -238,13 +195,12 @@
 
     /* WHY BUY */
     .whyMadeByCare {
-        background-color: colors.$slate-blue;
-        background-color: colors.$dusty-blue;
-        background-color: colors.$ink-blue;
-        background-color: colors.$rosewood;
         padding: 120px 22px;
         text-align: center;
-        color: colors.$super-light;
+        //background-color: rgb(192, 218, 176);
+        color: black;
+
+
 
         h2 {
             font-size: 34px;
@@ -271,6 +227,8 @@
             gap: 48px;
 
             .reason {
+                padding: 1rem;
+
                 .number {
                     display: block;
                     font-weight: 700;
@@ -342,7 +300,7 @@
             .img {
                 height: 300px;
                 border-radius: 18px;
-                background-color: colors.$silk;
+                background-color: white;
                 margin-bottom: 16px;
             }
         }
@@ -352,7 +310,6 @@
     .sustainabilityExplain {
         position: relative;
         padding: 120px 22px;
-        background-color: colors.$super-light;
         text-align: center;
         color: colors.$dark;
 
@@ -401,9 +358,7 @@
             }
 
             &.placeholder {
-                background: linear-gradient(135deg,
-                        colors.$silk,
-                        colors.$super-light );
+                background: white;
             }
         }
 
@@ -433,6 +388,7 @@
         background-color: colors.$silk;
         text-align: center;
         color: colors.$dark;
+        background-color: white;
 
         h2 {
             font-size: 20px;
@@ -533,7 +489,6 @@
 
     /* PROCESS */
     .processSection {
-        background-color: colors.$super-light;
         padding: 120px 22px;
         text-align: center;
         color: colors.$dark;
@@ -553,8 +508,8 @@
         }
 
         .processCard {
-            background-color: colors.$silk;
-            color: colors.$super-dark;
+            background-color: white;
+
             padding: 48px 32px;
             min-height: 360px;
 
@@ -587,7 +542,7 @@
     .helpSection {
         background-color: colors.$ink-blue;
         padding: 64px 15%;
-        color: colors.$super-light;
+        color: white;
 
         .helpInner {
             max-width: 500px;
@@ -639,9 +594,7 @@
 
     /* PLACEHOLDER */
     .placeholder {
-        background-image: linear-gradient(135deg,
-                colors.$super-light,
-                colors.$silk );
+        background: white;
     }
 
     /* RESPONSIVE */

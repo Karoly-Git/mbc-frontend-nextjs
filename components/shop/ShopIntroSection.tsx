@@ -7,7 +7,7 @@ export default function ShopIntroSection() {
                 <div className="introCard">
                     <h3>Crocheted Toys</h3>
                     <div className="image placeholder" />
-                    <NavButton href="/shop/all" className="pillBtn">
+                    <NavButton href="/shop/all" >
                         Shop crocheted toys
                     </NavButton>
                 </div>
@@ -15,7 +15,7 @@ export default function ShopIntroSection() {
                 <div className="introCard">
                     <h3>Kitchen & Home</h3>
                     <div className="image placeholder" />
-                    <NavButton href="/shop/all" className="pillBtn">
+                    <NavButton href="/shop/all" >
                         Shop home textiles
                     </NavButton>
                 </div>
@@ -23,7 +23,7 @@ export default function ShopIntroSection() {
                 <div className="introCard">
                     <h3>Baby Essentials</h3>
                     <div className="image placeholder" />
-                    <NavButton href="/shop/all" className="pillBtn">
+                    <NavButton href="/shop/all" >
                         Shop by collection
                     </NavButton>
                 </div>

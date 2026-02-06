@@ -4,7 +4,6 @@
     max-width: 900px;
     margin: 0 auto;
     padding: 72px 22px 96px;
-    color: colors.$super-dark;
 
     /* HERO */
     .aboutHero {
@@ -70,7 +69,7 @@
 
     .valueCard {
         background-color: #fff;
-        border: 1px solid rgba(colors.$super-light, 0.9);
+        border: 1px solid white;
         border-radius: 20px;
         padding: 26px;
         box-shadow: 0 8px 22px rgba(0, 0, 0, 0.03);
@@ -92,7 +91,7 @@
     .aboutClosing {
         margin-top: 80px;
         padding-top: 40px;
-        border-top: 1px solid rgba(colors.$super-light, 0.6);
+        border-top: 1px solid white;
 
         p {
             font-size: 16px;

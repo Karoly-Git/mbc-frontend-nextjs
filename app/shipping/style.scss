@@ -4,7 +4,7 @@
     max-width: 900px;
     margin: 0 auto;
     padding: 72px 22px 96px;
-    color: colors.$super-dark;
+
 
     /* HERO */
     .shippingHero {
@@ -65,9 +65,7 @@
                 color: colors.$dark;
                 margin-bottom: 10px;
 
-                strong {
-                    color: colors.$super-dark;
-                }
+                strong {}
             }
         }
 
@@ -86,7 +84,7 @@
     .shippingClosing {
         margin-top: 80px;
         padding-top: 40px;
-        border-top: 1px solid rgba(colors.$super-light, 0.6);
+        border-top: 1px solid white;
 
         p {
             font-size: 16px;

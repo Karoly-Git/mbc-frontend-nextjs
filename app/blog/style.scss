@@ -4,7 +4,6 @@
     max-width: 900px;
     margin: 0 auto;
     padding: 72px 22px 96px;
-    color: colors.$super-dark;
 
     /* HERO */
     .blogHero {
@@ -43,7 +42,7 @@
 
     .postCard {
         background-color: #fff;
-        border: 1px solid rgba(colors.$super-light, 0.9);
+        border: 1px solid white;
         border-radius: 22px;
         padding: 30px 32px;
         box-shadow: 0 10px 26px rgba(0, 0, 0, 0.04);
@@ -60,7 +59,7 @@
             font-size: 22px;
             font-weight: 600;
             margin-bottom: 12px;
-            color: colors.$super-dark;
+
         }
 
         p {

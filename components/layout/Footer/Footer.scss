@@ -2,6 +2,7 @@
 
 .siteFooter {
     background-color: rgba(colors.$ink-blue, 1);
+    color: white;
 
     .footerInner {
         max-width: 1400px;
@@ -23,20 +24,17 @@
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: colors.$super-light;
             margin-bottom: 12px;
             text-decoration: underline;
             text-decoration-thickness: 2px;
-            text-decoration-color: colors.$super-light;
             text-underline-offset: 20px;
         }
 
         a {
             font-size: 14px;
             text-decoration: none;
-            color: colors.$super-light;
 
-            &:hover {
+            white &:hover {
                 text-decoration: underline;
                 text-underline-offset: 5px;
             }
@@ -53,7 +51,6 @@
 
         span {
             font-size: 12px;
-            color: colors.$super-light;
         }
     }
 }

@@ -46,11 +46,7 @@ export default function NewArrivals() {
                     </div>
                 </div>
             </div>
-            <NavButton
-                href="/shop/all"
-                bgColor="var(--color-light)"
-                textColor="var(--color-super-light)"
-            >
+            <NavButton href="/shop/all">
                 See more
             </NavButton>
         </section>)
