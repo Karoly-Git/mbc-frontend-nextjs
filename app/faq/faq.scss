@@ -1,0 +1,57 @@
+@use "../../app/colors.scss" as colors;
+
+.faqPage {
+
+    /* HERO */
+    .faqHero {
+        margin-bottom: 64px;
+    }
+
+    /* FAQ LIST */
+    .faqSection {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .faqItem {
+        border-radius: 22px;
+        padding: 28px 32px;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.04);
+
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.65;
+            margin: 0;
+            max-width: 680px;
+        }
+
+        a {
+            color: colors.$logo-gold;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+        }
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .faqPage {
+        padding-top: 56px;
+
+        .faqHero h1 {
+            font-size: 34px;
+        }
+    }
+}

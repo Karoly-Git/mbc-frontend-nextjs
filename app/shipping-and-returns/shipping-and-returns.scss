@@ -1,0 +1,74 @@
+@use "../../app/colors.scss" as colors;
+
+.shippingPage {
+
+    /* HERO */
+    .shippingHero {
+        margin-bottom: 64px;
+    }
+
+    /* SECTIONS */
+    .shippingSection {
+        margin-top: 56px;
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 720px;
+
+            &+p {
+                margin-top: 14px;
+            }
+        }
+
+        ul {
+            margin: 18px 0 18px 18px;
+            padding: 0;
+
+            li {
+                font-size: 15px;
+                line-height: 1.6;
+                margin-bottom: 10px;
+            }
+        }
+
+        a {
+            color: colors.$logo-gold;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+        }
+    }
+
+    /* CLOSING */
+    .shippingClosing {
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid white;
+
+        p {
+            font-size: 16px;
+            max-width: 620px;
+        }
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .shippingPage {
+        padding-top: 56px;
+
+        .shippingHero h1 {
+            font-size: 34px;
+        }
+    }
+}

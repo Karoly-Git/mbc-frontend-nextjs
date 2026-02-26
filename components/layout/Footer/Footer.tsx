@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import "./Footer.scss";
+import "./footer.scss";
 
 export default function Footer() {
     return (
@@ -12,7 +12,7 @@ export default function Footer() {
                     <h4>About</h4>
                     <Link href="/about">About Us</Link>
                     <Link href="/our-values">Our Values</Link>
-                    <Link href="/blog">From the Workshop</Link>
+                    <Link href="/blog">Blog</Link>
                     <Link href="/sustainability">Sustainability</Link>
                 </div>
 
@@ -20,9 +20,9 @@ export default function Footer() {
                 <div className="footerCol">
                     <h4>Shop</h4>
                     <Link href="/shop">All Products</Link>
-                    <Link href="/shop/collections">Collections</Link>
-                    <Link href="/shop/gifts">Gift Ideas</Link>
-                    <Link href="/shop/adopted">Previously Loved</Link>
+                    <Link href="/shop/toys">Toys</Link>
+                    <Link href="/shop/kitchen-and-home">Kitchen & Home</Link>
+                    <Link href="/shop/baby-essentials">Baby Essentials</Link>
                 </div>
 
                 {/* COMMUNITY */}
@@ -31,7 +31,7 @@ export default function Footer() {
                     <Link href="/newsletter">Newsletter</Link>
                     <Link href="/events">Events</Link>
                     <Link href="/partners">Our Partners</Link>
-                    <Link href="/stockists">Find Us in Store</Link>
+                    <Link href="/social-media">Social Media</Link>
                 </div>
 
                 {/* SUPPORT */}
@@ -39,8 +39,8 @@ export default function Footer() {
                     <h4>Support</h4>
                     <Link href="/contact">Contact Us</Link>
                     <Link href="/faq">FAQs</Link>
-                    <Link href="/shipping">Shipping & Returns</Link>
-                    <Link href="/privacy">Privacy Policy</Link>
+                    <Link href="/shipping-and-returns">Shipping & Returns</Link>
+                    <Link href="/privacy-policy">Privacy Policy</Link>
                 </div>
             </div>
 

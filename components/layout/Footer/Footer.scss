@@ -1,8 +1,7 @@
 @use "../../../app/colors.scss" as colors;
 
 .siteFooter {
-    background-color: rgba(colors.$ink-blue, 1);
-    color: white;
+    background-color: colors.$deep-navy;
 
     .footerInner {
         max-width: 1400px;
@@ -18,36 +17,40 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        color: white;
+
 
         h4 {
-            font-size: 13px;
+            font-size: 0.9rem;
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             margin-bottom: 12px;
             text-decoration: underline;
             text-decoration-thickness: 2px;
-            text-underline-offset: 20px;
+            text-underline-offset: 10px;
         }
 
         a {
-            font-size: 14px;
+            font-size: 0.8rem;
             text-decoration: none;
+            color: white;
 
-            white &:hover {
-                text-decoration: underline;
-                text-underline-offset: 5px;
+
+            &:hover {
+                color: colors.$logo-gold;
             }
         }
     }
 
     .footerBottom {
-        border-top: 1px solid rgba(colors.$light, 0.5);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
         padding: 20px 80px;
         display: flex;
         justify-content: space-between;
         gap: 16px;
         flex-wrap: wrap;
+        color: white;
 
         span {
             font-size: 12px;

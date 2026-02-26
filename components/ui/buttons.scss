@@ -1,0 +1,56 @@
+@use "../../app/colors.scss" as colors;
+
+.uiButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 30px;
+    border-radius: 999px;
+
+    font-size: 13px;
+    letter-spacing: 0.04em;
+
+    border-color: transparent;
+
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+.navButton {
+    background-color: colors.$cherry;
+    color: white;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: colors.$deep-cherry;
+
+    }
+}
+
+.faqBtn {
+    background-color: transparent;
+    border: 1px solid white;
+
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}
+
+.helpBtn {
+    background-color: transparent;
+    border: 1px solid white;
+
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}

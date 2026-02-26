@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import "./Header.scss";
+import "./header.scss";
 
 import { usePathname } from "next/navigation";
 import { TiShoppingCart as CartIcon } from "react-icons/ti";
@@ -100,8 +100,6 @@ export default function Header() {
                     </Link>
                 </div>
             </div>
-
-            <div className="headerAccent" />
         </header>
     );
 }

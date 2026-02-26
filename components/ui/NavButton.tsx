@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./_buttons.scss";
+import "./buttons.scss";
 
 type NavButtonProps = {
     children: React.ReactNode;

@@ -1,4 +1,4 @@
-import "./_buttons.scss";
+import "./buttons.scss";
 
 type ActionButtonProps = {
     children: React.ReactNode;
