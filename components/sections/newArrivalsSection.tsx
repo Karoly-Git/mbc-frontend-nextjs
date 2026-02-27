@@ -47,7 +47,7 @@ export default function NewArrivalsSection() {
                 </div>
             </div>
 
-            <NavButton href="/shop/all">
+            <NavButton href="/shop">
                 See more
             </NavButton>
         </section>

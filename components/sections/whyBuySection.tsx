@@ -65,7 +65,7 @@ export default function WhyBuySection() {
                 </p>
             </div>
 
-            <NavButton href="/shop/all">
+            <NavButton href="/shop">
                 Shop all handmade pieces
             </NavButton>
         </section>

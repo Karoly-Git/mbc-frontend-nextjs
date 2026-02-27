@@ -7,7 +7,7 @@ export default function IntroSection() {
                 <div className="introCard">
                     <h3>Toys</h3>
                     <div className="image placeholder" />
-                    <NavButton href="/shop/all" >
+                    <NavButton href="/shop" >
                         Explore Toys
                     </NavButton>
                 </div>
@@ -15,7 +15,7 @@ export default function IntroSection() {
                 <div className="introCard">
                     <h3>Kitchen & Home</h3>
                     <div className="image placeholder" />
-                    <NavButton href="/shop/all" >
+                    <NavButton href="/shop" >
                         Discover Kitchen & Home
                     </NavButton>
                 </div>
@@ -23,7 +23,7 @@ export default function IntroSection() {
                 <div className="introCard">
                     <h3>Baby Essentials</h3>
                     <div className="image placeholder" />
-                    <NavButton href="/shop/all" >
+                    <NavButton href="/shop" >
                         Shop Baby Essentials
                     </NavButton>
                 </div>
