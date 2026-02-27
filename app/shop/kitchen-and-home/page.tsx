@@ -1,7 +1,7 @@
 import Link from "next/link";
 import "./style.scss";
 
-import NavButton from "../../../components/ui/navButton";
+import NavButton from "../../../components/ui/NavButton";
 
 export default function KitchenAndHomePage() {
     return (

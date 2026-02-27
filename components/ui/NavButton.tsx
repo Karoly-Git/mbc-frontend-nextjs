@@ -15,7 +15,7 @@ export default function NavButton({
     return (
         <Link
             href={href}
-            className={`uiButton navButton ${className}`}
+            className={`uiButton NavButton ${className}`}
         >
             {children}
         </Link>

@@ -1,4 +1,4 @@
-import NavButton from "@/components/ui/navButton";
+import NavButton from "@/components/ui/NavButton";
 import "./contact.scss";
 
 export default function ContactPage() {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import NavButton from "../ui/navButton";
+import NavButton from "../ui/NavButton";
 
 export default function HeroSection() {
     return (

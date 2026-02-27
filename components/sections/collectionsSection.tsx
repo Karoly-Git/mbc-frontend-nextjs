@@ -1,5 +1,5 @@
 import Link from "next/link";
-import NavButton from "../ui/navButton";
+import NavButton from "../ui/NavButton";
 
 export default function CollectionsSectio() {
     return (

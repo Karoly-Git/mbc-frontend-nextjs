@@ -1,4 +1,4 @@
-import NavButton from "../ui/navButton";
+import NavButton from "../ui/NavButton";
 
 export default function NewArrivalsSection() {
     return (
