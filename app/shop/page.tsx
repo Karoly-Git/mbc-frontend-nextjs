@@ -1,5 +1,7 @@
-export default function ShopPage() {
+import Shop from './Shop';
+
+export default function page() {
     return (
-        <div>ShopPage</div>
+        <Shop />
     )
 }

@@ -1,0 +1,468 @@
+.category {
+    padding: 48px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    .hero {
+        margin-bottom: 34px;
+
+        .breadcrumb {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            span {
+                margin: 0 6px;
+                color: #aaa;
+            }
+        }
+
+        h1 {
+            font-size: 40px;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        p {
+            margin-top: 14px;
+            font-size: 18px;
+            color: #555;
+            max-width: 680px;
+            line-height: 1.5;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+    }
+
+    .collectionCard {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 18px;
+
+        border: 1px solid #eaeaea;
+        border-radius: 18px;
+        padding: 20px;
+        background: #fff;
+        text-decoration: none;
+        color: inherit;
+        max-width: 520px;
+
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.07);
+            border-color: #e0e0e0;
+        }
+
+        /* Image column */
+        .cardMedia {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .thumbImg {
+            width: 100%;
+            height: 100%;
+            min-height: 96px;
+            object-fit: cover;
+            border-radius: 14px;
+            background: #f4f4f4;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+            background-color: red;
+        }
+
+        /* Content */
+        .cardBody {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .meta {
+            font-size: 13px;
+            color: #777;
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .title {
+            font-size: 22px;
+            margin: 0 0 6px 0;
+            line-height: 1.25;
+        }
+
+        .text {
+            color: #555;
+            margin: 0;
+            line-height: 1.45;
+        }
+
+        .actionRow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 14px;
+            gap: 12px;
+            border-top: 1px solid #f0f0f0;
+
+            .action {
+                font-weight: 600;
+            }
+
+            .count {
+                font-size: 14px;
+                color: #777;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    /* Mobile */
+    @media (max-width: 560px) {
+        .collectionCard {
+            grid-template-columns: 1fr;
+
+            .thumbImg {
+                min-height: 160px;
+            }
+        }
+    }
+
+    .note {
+        margin-top: 26px;
+        padding: 14px 16px;
+        border: 1px solid #eaeaea;
+        border-radius: 14px;
+        background: #fafafa;
+        color: #666;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    /* ===== Toys UX add-ons ===== */
+
+    .filterBar {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 18px 0 10px 0;
+        padding: 14px 14px;
+        border: 1px solid #eeeeee;
+        border-radius: 16px;
+        background: #fff;
+    }
+
+    .filterLeft {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .resultsCount {
+        margin: 0;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .chip {
+        border: 1px solid #e6e6e6;
+        background: #fff;
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 13px;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        &:hover {
+            border-color: #d9d9d9;
+            transform: translateY(-1px);
+        }
+
+        &.isActive {
+            border-color: #cfcfcf;
+            background: #f7f7f7;
+            font-weight: 600;
+        }
+    }
+
+    .compareBtn {
+        border: 1px solid #e6e6e6;
+        background: #fff;
+        border-radius: 12px;
+        padding: 10px 12px;
+        cursor: pointer;
+        font-weight: 600;
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+
+    .cardWrap {
+        position: relative;
+    }
+
+    .compareToggle {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid #eaeaea;
+        font-size: 12px;
+        color: #444;
+
+        input {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    .socialProof {
+        margin-top: 26px;
+        padding: 18px;
+        border: 1px solid #eeeeee;
+        border-radius: 18px;
+        background: #fff;
+    }
+
+    .socialTitle {
+        margin: 0 0 14px 0;
+        font-size: 18px;
+    }
+
+    .quotes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+    }
+
+    .quoteCard {
+        margin: 0;
+        padding: 14px;
+        border-radius: 16px;
+        border: 1px solid #f0f0f0;
+        background: #fafafa;
+
+        blockquote {
+            margin: 0;
+            color: #333;
+            line-height: 1.45;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #666;
+        }
+    }
+
+    /* Mobile sticky button */
+    .mobileFilterBtn {
+        display: none;
+    }
+
+    @media (max-width: 640px) {
+        .filterBar {
+            position: sticky;
+            top: 10px;
+            z-index: 10;
+        }
+
+        .mobileFilterBtn {
+            display: inline-flex;
+            position: fixed;
+            left: 16px;
+            right: 16px;
+            bottom: 14px;
+            z-index: 20;
+
+            justify-content: center;
+            padding: 12px 14px;
+            border-radius: 999px;
+            border: 1px solid #e6e6e6;
+            background: #fff;
+            font-weight: 700;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+        }
+    }
+
+    /* Compare modal */
+    .modalOverlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+    }
+
+    .modal {
+        width: 100%;
+        max-width: 760px;
+        background: #fff;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid #ededed;
+        box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+    }
+
+    .modalHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        border-bottom: 1px solid #f0f0f0;
+
+        h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+    }
+
+    .closeBtn {
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 1;
+        padding: 8px;
+    }
+
+    .modalBody {
+        padding: 16px;
+    }
+
+    .modalHint {
+        margin: 0 0 14px 0;
+        color: #666;
+        font-size: 14px;
+    }
+
+    .compareGrid {
+        display: grid;
+        gap: 12px;
+    }
+
+    .compareItem {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 12px;
+        border: 1px solid #f0f0f0;
+        border-radius: 16px;
+        padding: 12px;
+        background: #fafafa;
+    }
+
+    .compareThumb img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+
+    .compareInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .muted {
+        margin: 0;
+        color: #666;
+        font-size: 13px;
+    }
+
+    .compareActions {
+        display: flex;
+        gap: 10px;
+        margin-top: 8px;
+        align-items: center;
+    }
+
+    .miniLink {
+        font-weight: 700;
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .miniBtn {
+        border: 1px solid #e6e6e6;
+        background: #fff;
+        border-radius: 10px;
+        padding: 8px 10px;
+        cursor: pointer;
+    }
+
+    .modalFooter {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        padding: 14px 16px;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .secondaryBtn,
+    .primaryBtn {
+        border-radius: 12px;
+        padding: 10px 12px;
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    .secondaryBtn {
+        border: 1px solid #e6e6e6;
+        background: #fff;
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+
+    .primaryBtn {
+        border: 1px solid #e6e6e6;
+        background: #f7f7f7;
+    }
+
+    .emptyState {
+        margin: 0;
+        color: #666;
+        font-size: 14px;
+    }
+}

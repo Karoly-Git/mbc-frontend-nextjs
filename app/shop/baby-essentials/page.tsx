@@ -1,5 +1,7 @@
-export default function BabyEssentialsPage() {
+import BabyEssentials from "./BabyEssentials";
+
+export default function page() {
     return (
-        <div>BabyEssentials</div>
+        <BabyEssentials />
     )
 }

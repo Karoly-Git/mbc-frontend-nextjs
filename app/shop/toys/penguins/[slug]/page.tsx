@@ -3,7 +3,7 @@ import Image from "next/image";
 import "./style.scss";
 import { getProductsByCollection } from "@/lib/productHelpers";
 
-export default function PenguinsPage() {
+export default function Penguins() {
     const penguins = getProductsByCollection({
         section: "toys",
         collection: "penguins",
